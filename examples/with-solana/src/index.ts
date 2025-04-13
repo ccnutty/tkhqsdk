@@ -24,7 +24,9 @@ import {
 } from "./utils";
 import { createTransfer } from "./utils/createSolanaTransfer";
 
-const TURNKEY_WAR_CHEST = "tkhqC9QX2gkqJtUFk2QKhBmQfFyyqZXSpr73VFRi35C";
+// const TURNKEY_WAR_CHEST = "tkhqC9QX2gkqJtUFk2QKhBmQfFyyqZXSpr73VFRi35C";
+
+const TURNKEY_WAR_CHEST = "GkVfu4wubTymS2PVs884apYx1QpU6kbnjAK5Sg1barDF";
 
 async function main() {
   const organizationId = process.env.ORGANIZATION_ID!;
@@ -34,7 +36,9 @@ async function main() {
   const nodeEndpoint =
     process.env.SOLANA_NODE || "https://api.devnet.solana.com";
   const connection = solanaNetwork.connect(nodeEndpoint);
-  const network: "devnet" | "mainnet" = "devnet";
+  //const network: "devnet" | "mainnet" = "devnet";
+  const network = 
+    process.env.NETWORK || "devnet";
 
   const turnkeyClient = new Turnkey({
     apiBaseUrl: process.env.BASE_URL!,
